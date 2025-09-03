@@ -8,15 +8,17 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;s
+      height: 100%;
       font-family: 'Georgia', serif;
       display: flex;
       justify-content: center;
-      align-items: center;   /* Center vertically */
-      min-height: 100vh;     /* Full screen height */
+      align-items: center;
+      min-height: 100vh;
       box-sizing: border-box;
+      overflow: hidden;
     }
-    /* Background video settings */
+
+    /* Background video */
     #bg-video {
       position: fixed;
       top: 50%;
@@ -38,8 +40,8 @@
       border-radius: 25px;
       padding: 50px;
       text-align: center;
-      width: 90%;            /* Take up more width */
-      max-width: 500px;      /* Wider on large screens */
+      width: 90%;
+      max-width: 500px;
       box-sizing: border-box;
       box-shadow: 0 8px 20px rgba(0,0,0,0.25);
       display: flex;
@@ -47,7 +49,8 @@
       align-items: center;
       overflow: hidden;
     }
-    /* Yellow glow with pulse effect for the card */
+
+    /* Yellow glow */
     .card::before {
       content: "";
       position: absolute;
@@ -92,7 +95,6 @@
       z-index: 1;
     }
 
-    /* Sparkle effect for wedding date text */
     .sparkle {
       position: relative;
       display: inline-block;
@@ -109,7 +111,6 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* RSVP Button with glowing pulse + hover grow */
     .rsvp-btn {
       display: inline-block;
       margin-top: 20px;
@@ -130,7 +131,7 @@
       background: darkgoldenrod;
       color: #fff;
       box-shadow: 0 0 25px rgba(255, 215, 0, 1);
-      transform: scale(1.1); /* Button grows on hover */
+      transform: scale(1.1);
     }
 
     @keyframes buttonGlow {
@@ -139,18 +140,10 @@
       100% { box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); }
     }
 
-    /* Responsive design */
+    /* Mobile */
     @media (max-width: 480px) {
-      .card {
-        max-width: 90%;
-        padding: 30px;
-      }
-
-      .circle-img {
-        width: 200px;
-        height: 200px;
-      }
-
+      .card { padding: 30px; }
+      .circle-img { width: 200px; height: 200px; }
       h1 { font-size: 24px; }
       p { font-size: 16px; }
       .rsvp-btn { font-size: 14px; padding: 12px 24px; }
@@ -159,25 +152,23 @@
 </head>
 <body>
 
-  <!-- Full-screen background video -->
   <video autoplay muted loop playsinline id="bg-video">
     <source src="https://raw.githubusercontent.com/dharmar508/Backgrounds/main/bg1.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
-  <!-- Invitation card -->
   <div class="card">
     <img src="https://raw.githubusercontent.com/dharmar508/Backgrounds/main/coupleAI.jpg" alt="Couple Photo" class="circle-img">
     <p>You’re invited to the wedding of</p>
     <h1>Sofia & Tarun</h1>
-    <p class="sparkle">Saturday, October 18 at 7:00 PM</p>
+    <p class="sparkle">Saturday, October 18 2025</p>
+    <p>at 7:00 PM</p>
     <p>The Heldrich, New Brunswick, NJ</p>
     <p>Reception to follow</p>
     <a href="https://example.com/rsvp" class="rsvp-btn">RSVP Now</a>
   </div>
   
   <script>
-    // Slow down the video playback
     document.getElementById("bg-video").playbackRate = 0.7;
   </script>
 
