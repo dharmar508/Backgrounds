@@ -9,9 +9,9 @@
       height: 100%;
       font-family: 'Georgia', serif;
       display: flex;
-      justify-content: center;  /* center horizontally */
-      align-items: flex-start;   /* start at the top */
-      padding-top: 50px;         /* push the card down */
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 50px;
       box-sizing: border-box;
     }
 
@@ -29,7 +29,7 @@
       z-index: -1;
     }
 
-    /* Invitation card container with glow */
+    /* Invitation card */
     .card {
       position: relative;
       z-index: 1;
@@ -48,7 +48,7 @@
       overflow: hidden;
     }
 
-    /* Yellow glow using pseudo-element */
+    /* Yellow glow with pulse effect for the card */
     .card::before {
       content: "";
       position: absolute;
@@ -60,9 +60,16 @@
       z-index: -1;
       filter: blur(50px);
       transform: scale(1.2);
+      animation: pulseGlow 4s ease-in-out infinite;
     }
 
-    /* Circle image styling */
+    @keyframes pulseGlow {
+      0% { opacity: 0.6; transform: scale(1.2); }
+      50% { opacity: 0.9; transform: scale(1.3); }
+      100% { opacity: 0.6; transform: scale(1.2); }
+    }
+
+    /* Circle image */
     .circle-img {
       display: block;
       margin: 0 auto 20px auto;
@@ -86,6 +93,24 @@
       z-index: 1;
     }
 
+    /* Sparkle effect for wedding date text */
+    .sparkle {
+      position: relative;
+      display: inline-block;
+      background: linear-gradient(120deg, #000, #000, gold, #000, #000);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: sparkle 3s infinite linear;
+    }
+
+    @keyframes sparkle {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* RSVP Button with glowing pulse + hover grow */
     .rsvp-btn {
       display: inline-block;
       margin-top: 20px;
@@ -96,13 +121,23 @@
       font-size: 16px;
       text-decoration: none;
       border-radius: 35px;
-      transition: 0.3s;
+      transition: 0.3s ease;
       z-index: 1;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+      animation: buttonGlow 2.5s ease-in-out infinite;
     }
 
     .rsvp-btn:hover {
       background: darkgoldenrod;
       color: #fff;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 1);
+      transform: scale(1.1); /* Button grows on hover */
+    }
+
+    @keyframes buttonGlow {
+      0% { box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); }
+      50% { box-shadow: 0 0 30px rgba(255, 215, 0, 1); }
+      100% { box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); }
     }
 
     /* Responsive design */
@@ -136,7 +171,7 @@
     <img src="https://raw.githubusercontent.com/dharmar508/Backgrounds/main/coupleAI.jpg" alt="Couple Photo" class="circle-img">
     <p>You’re invited to the wedding of</p>
     <h1>Sofia & Tarun</h1>
-    <p>Saturday, October 18 at 7:00 PM</p>
+    <p class="sparkle">Saturday, October 18 at 7:00 PM</p>
     <p>The Heldrich, New Brunswick, NJ</p>
     <p>Reception to follow</p>
     <a href="https://example.com/rsvp" class="rsvp-btn">RSVP Now</a>
