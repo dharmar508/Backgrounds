@@ -108,23 +108,24 @@
     }
 
     /* 📱 Mobile screens */
-    @media (max-width: 992px) {  /* targeting typical phones */
+    /* For small phones */
+    @media (max-width: 480px) {
       .card {
-        min-width: 80%;
-        max-width: 98%;          /* almost full screen */
-        padding: 40px;           /* bigger padding for readability */
-        min-height: 1200px;       /* keep card taller */
+        min-width: 95%;       /* almost full width */
+        max-width: 98%;       /* prevent overflow */
+        padding: 40px;        /* enough spacing */
+        min-height: auto;     /* let it adjust */
       }
 
       .circle-img {
-        width: 200px;            /* slightly bigger image */
-        height: 200px;
-        border: 10px solid gold;
+        width: 220px;         /* bigger image */
+        height: 220px;
+        border: 12px solid gold;
       }
 
-      h1 { font-size: 26px; }
+      h1 { font-size: 28px; }
       p { font-size: 18px; }
-      .rsvp-btn { font-size: 16px; padding: 14px 28px; }
+      .rsvp-btn { font-size: 16px; padding: 16px 32px; }
     }
 
   </style>
