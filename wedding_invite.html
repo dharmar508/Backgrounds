@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wedding Invitation with Video Background</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Georgia', serif;
+    }
+
+    /* Background video settings */
+    #bg-video {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* Invitation card styling */
+    .card {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      max-width: 500px;
+      margin: 50px auto;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .circle-img {
+      display: block;
+      margin: 0 auto;
+      border: 10px solid gold;
+      border-radius: 50%;
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin: 20px 0 10px;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+
+    .rsvp-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: gold;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .rsvp-btn:hover {
+      background: darkgoldenrod;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Full-screen background video -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="https://raw.githubusercontent.com/dharmar508/Backgrounds/main/bg1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="card">
+    <img src="https://raw.githubusercontent.com/dharmar508/Backgrounds/main/coupleAI.jpg" alt="Couple Photo" class="circle-img">
+    <p>You’re invited to the wedding of</p>
+    <h1>Sofia & Tarun</h1>
+    <p>Saturday, October 18 at 7:00 PM</p>
+    <p>The Heldrich, New Brunswick, NJ</p>
+    <p>Reception to follow</p>
+    <a href="https://example.com/rsvp" class="rsvp-btn">RSVP Now</a>
+  </div>
+  
+  <script>
+    // Slow down the video to 0.5x
+    document.getElementById("bg-video").playbackRate = 0.7;
+  </script>
+
+</body>
+</html>
