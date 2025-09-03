@@ -8,7 +8,6 @@
       margin: 0;
       height: 100%;
       font-family: 'Georgia', serif;
-
       display: flex;
       justify-content: center;
       align-items: center;
@@ -109,27 +108,24 @@
     }
 
     /* 📱 Mobile screens */
-    @media (max-width: 1200px) {
-      html, body {
-        padding: 2vh 0;
-      }
-
+    @media (max-width: 600px) {  /* targeting typical phones */
       .card {
-        max-width: 95%;
-        padding: 25px;
-        min-height: auto;
+        max-width: 98%;          /* almost full screen */
+        padding: 40px;           /* bigger padding for readability */
+        min-height: 600px;       /* keep card taller */
       }
 
       .circle-img {
-        width: 150px;
-        height: 150px;
-        border: 8px solid gold;
+        width: 200px;            /* slightly bigger image */
+        height: 200px;
+        border: 10px solid gold;
       }
 
-      h1 { font-size: 24px; }
-      p { font-size: 16px; }
-      .rsvp-btn { font-size: 14px; padding: 12px 22px; }
+      h1 { font-size: 26px; }
+      p { font-size: 18px; }
+      .rsvp-btn { font-size: 16px; padding: 14px 28px; }
     }
+
   </style>
 </head>
 <body>
