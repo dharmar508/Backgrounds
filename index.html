@@ -35,8 +35,12 @@
       padding: 30px;
       text-align: center;
       max-width: 500px;
-      min-height: 600px;
-      margin: 50px auto;
+    
+      /* 👇 new part */
+      margin: 5vh auto;     /* vertical & horizontal margin */
+      width: calc(100% - 40px); /* ensures space from left/right */
+      box-sizing: border-box;   /* makes padding included in width */
+    
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
 
